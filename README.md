@@ -1,2 +1,2 @@
 # BookApi2
-Continue of developing BookApi (adding Hiberante)
+Continue of developing BookApi (adding Hibernate)
