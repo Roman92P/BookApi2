@@ -20,6 +20,7 @@
             <th scope="col">Publisher</th>
             <th scope="col">Type</th>
             <th scope="col">ISBN</th>
+            <th scope="col">Action</th>
             </thead>
             <tbody>
             <c:forEach items="${books}" var="book">
@@ -29,6 +30,11 @@
                     <td><c:out value="${book.publisher}"/></td>
                     <td><c:out value="${book.type}"/></td>
                     <td><c:out value="${book.isbn}"/></td>
+                    <td>
+                        <a href="/books/edit/${book.id}">Edit</a>
+                        <br>
+                        <a href="/books/delete/${book.id}">Delete</a>
+                    </td>
                 </tr>
             </c:forEach>
             </tbody>

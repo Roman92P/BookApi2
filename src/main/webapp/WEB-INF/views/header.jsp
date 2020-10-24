@@ -23,7 +23,7 @@
     <nav class="navbar navbar-dark bg-dark mx-auto shadow-lg p-3 mb-5 bg-dark rounded">
         <!-- Navbar content -->
         <a class="navbar-brand">
-            <i class="fas fa-book"></i>
+            <i class="fa fa-book"></i>
             <span>Book manager</span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,14 +32,16 @@
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Books list <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="nav-link" href="/books"><i class="fa fa-list-alt" aria-hidden="true"></i> Books list </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/books/add">Add book</a>
+                    <a class="nav-link" href="/books/add"><i class="fa fa-plus-square" aria-hidden="true"></i>
+                         Add book</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Log out</a>
+                    <a class="nav-link" href="#"><i class="fa fa-user" aria-hidden="true"></i>
+                        Log out</a>
                 </li>
             </ul>
         </div>

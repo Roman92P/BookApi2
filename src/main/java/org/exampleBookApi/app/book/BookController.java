@@ -4,6 +4,8 @@ import org.exampleBookApi.app.model.Book;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -41,5 +43,17 @@ public class BookController {
         jpaBookService.addBook(book);
         return "redirect:/books";
     }
+    @RequestMapping("/edit/{id}")
+    protected String editBookForm(@PathVariable long id, Model model){
+        Book book = jpaBookService.get(id);
+        model.addAttribute("book", book);
+        return "addBookForm";
+    }
+    @RequestMapping("/delete/{id}")
+    protected String deleteBook(@PathVariable long id){
+        jpaBookService.deleteBook(id);
+        return "redirect:/books";
+    }
+
 
 }
