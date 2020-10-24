@@ -1,6 +1,6 @@
 package org.exampleBookApi.app.config;
 
-import org.exampleBookApi.app.AppConfig;
+import org.exampleBookApi.app.config.AppConfig;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
