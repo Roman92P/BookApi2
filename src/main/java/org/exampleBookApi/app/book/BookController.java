@@ -39,7 +39,7 @@ public class BookController {
             return "addBookForm";
         }
         jpaBookService.addBook(book);
-        return "redirect:/";
+        return "redirect:/books";
     }
 
 }

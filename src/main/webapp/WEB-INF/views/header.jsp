@@ -10,13 +10,22 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+<%--    font awesome--%>
+    <link href="<c:url value="/theme/all.css"/>"
+          rel="stylesheet" type="text/css">
+    <%--    --%>
+    <link rel="stylesheet" href="<c:url value="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
     <title>BookApi2</title>
+
     <%--    Nav bar--%>
     <nav class="navbar navbar-dark bg-dark mx-auto shadow-lg p-3 mb-5 bg-dark rounded">
         <!-- Navbar content -->
-        <a class="navbar-brand">Menu</a>
+        <a class="navbar-brand">
+            <i class="fas fa-book"></i>
+            <span>Book manager</span>
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
