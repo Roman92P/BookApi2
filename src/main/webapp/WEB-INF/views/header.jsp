@@ -40,6 +40,9 @@
                          Add book</a>
                 </li>
                 <li class="nav-item">
+                    <form th:action="@{/logout}" method="post">
+                        <input type="submit" value="Sign Out"/>
+                    </form>
                     <a class="nav-link" href="#"><i class="fa fa-user" aria-hidden="true"></i>
                         Log out</a>
                 </li>

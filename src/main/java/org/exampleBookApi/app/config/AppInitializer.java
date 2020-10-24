@@ -18,7 +18,7 @@ public class AppInitializer implements WebApplicationInitializer {
     public void onStartup(ServletContext servletContext) throws ServletException {
         AnnotationConfigWebApplicationContext ctx =
                 new AnnotationConfigWebApplicationContext();
-        ctx.register(AppConfig.class);
+        ctx.register(AppConfig.class, WebSecurityConfig.class);
         ctx.setServletContext(servletContext);
         ServletRegistration.Dynamic servlet =
                 servletContext.addServlet("dispatcher", new DispatcherServlet(ctx));
@@ -28,6 +28,7 @@ public class AppInitializer implements WebApplicationInitializer {
         filterRegistration.setInitParameter("encoding", "UTF-8");
         filterRegistration.setInitParameter("forceEncoding", "true");
         filterRegistration.addMappingForUrlPatterns(null, true, "/*");
+
     }
 }
 
