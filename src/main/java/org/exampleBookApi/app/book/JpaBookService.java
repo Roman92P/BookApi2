@@ -21,13 +21,13 @@ public class JpaBookService implements BookService {
     }
 
     @Override
-    public Book get(Long id) {
+    public Optional<Book> get(Long id){
         Optional<Book> byId = bookRepository.findById(id);
-        Book book = null;
-        if (byId.isPresent()) {
-            book = byId.get();
-        }
-        return book;
+//        Book book = null;
+//        if (byId.isPresent()) {
+//            book = byId.get();
+//        }
+        return byId;
     }
 
     @Override

@@ -19,7 +19,7 @@
                         </div>
                         <div class="col-10">
                             <input type="text" th:field="*{author}"/>
-                            <p th:if="${#fields.hasErrors('author')}" th:errors="*{author}">Incorrect field</p>
+                            <p th:if="${#fields.hasErrors('author')}" th:errors="*{author}" class="alert alert-danger">Incorrect field</p>
                         </div>
                     </div>
                     <div class="row">
@@ -28,7 +28,7 @@
                         </div>
                         <div class="col-10">
                             <input type="text" th:field="*{title}"/>
-                            <p th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Incorrect field</p>
+                            <p th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="alert alert-danger">Incorrect field</p>
                         </div>
                     </div>
                     <div class="row">
@@ -37,7 +37,7 @@
                         </div>
                         <div class="col-10">
                             <input type="text" th:field="*{publisher}"/>
-                            <p th:if="${#fields.hasErrors('publisher')}" th:errors="*{publisher}">Incorrect field</p>
+                            <p th:if="${#fields.hasErrors('publisher')}" th:errors="*{publisher}" class="alert alert-danger">Incorrect field</p>
                         </div>
                     </div>
                     <div class="row">
@@ -46,7 +46,7 @@
                         </div>
                         <div class="col-10">
                             <input type="text" th:field="*{type}"/>
-                            <p th:if="${#fields.hasErrors('type')}" th:errors="*{type}">Incorrect field</p>
+                            <p th:if="${#fields.hasErrors('type')}" th:errors="*{type}" class="alert alert-danger">Incorrect field</p>
                         </div>
                     </div>
                     <div class="row">
@@ -55,7 +55,7 @@
                         </div>
                         <div class="col-10">
                             <input type="text" th:field="*{isbn}"/>
-                            <p th:if="${#fields.hasErrors('isbn')}" th:errors="*{isbn}">Incorrect field</p>
+                            <p th:if="${#fields.hasErrors('isbn')}" th:errors="*{isbn}" class="alert alert-danger">Incorrect field</p>
                         </div>
                     </div>
                     <hr class="divider">

@@ -1,14 +1,13 @@
 package org.exampleBookApi.app.book;
 
+import org.exampleBookApi.app.exceptions.ErrorControllerAdvaice;
 import org.exampleBookApi.app.model.Book;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.EntityNotFoundException;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -17,9 +16,11 @@ import java.util.List;
 public class BookController {
 
     private final JpaBookService jpaBookService;
+    private final ErrorControllerAdvaice errorControllerAdvaice;
 
-    protected BookController(JpaBookService jpaBookService) {
+    protected BookController(JpaBookService jpaBookService, ErrorControllerAdvaice errorControllerAdvaice) {
         this.jpaBookService = jpaBookService;
+        this.errorControllerAdvaice = errorControllerAdvaice;
     }
 
     @RequestMapping
@@ -45,7 +46,7 @@ public class BookController {
     }
     @RequestMapping("/edit/{id}")
     protected String editBookForm(@PathVariable long id, Model model){
-        Book book = jpaBookService.get(id);
+        Book book = (Book) jpaBookService.get(id).orElseThrow(EntityNotFoundException::new);
         model.addAttribute("book", book);
         return "addBookForm";
     }
@@ -54,6 +55,16 @@ public class BookController {
         jpaBookService.deleteBook(id);
         return "redirect:/books";
     }
+
+    @GetMapping("/show/{id}")
+    public String showBook(Model model, @PathVariable long id) {
+        model.addAttribute("book", jpaBookService.get(id).orElseThrow(EntityNotFoundException::new));
+        return "bookDetails";
+    }
+
+
+
+
 
 
 }

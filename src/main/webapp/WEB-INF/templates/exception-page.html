@@ -2,16 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
       xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3" lang="en">
 <head>
-    <title>Spring Security Example</title>
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
 <div data-th-include="header.html"></div>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-12 mx-auto">
-            <h1>Welcome!</h1>
-            <p>Click <a th:href="@{/books}">here</a> to see list of all Books.</p>
+        <div class="col-12">
+            <p th:utext="${errorMessage}">ERROR</p>
+            <p th:utext="${exception}"></p>
         </div>
     </div>
 </div>
