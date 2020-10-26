@@ -14,8 +14,7 @@
     <link href="<c:url value="/theme/all.css"/>"
           rel="stylesheet" type="text/css">
     <%--    --%>
-    <link rel="stylesheet" href="<c:url value="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 
     <title>BookApi2</title>
 
@@ -40,9 +39,9 @@
                          Add book</a>
                 </li>
                 <li class="nav-item">
-                    <form th:action="@{/logout}" method="post">
+                    <form:form action="/logout" method="post">
                         <input type="submit" value="Sign Out"/>
-                    </form>
+                    </form:form>
                     <a class="nav-link" href="#"><i class="fa fa-user" aria-hidden="true"></i>
                         Log out</a>
                 </li>

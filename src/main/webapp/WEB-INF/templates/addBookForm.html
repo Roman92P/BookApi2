@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book manager</title>
+</head>
+<body>
+<div data-th-include="header.html"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-10 mx-auto shadow-lg p-3 mb-5 bg-white rounded">
+            <div class="form-group">
+                <form action="#" th:action="@{/books/add}" th:object="${book}" method="post">
+                    <p hidden><input type="text" th:field="*{id}"/></p>
+                    <div class="row">
+                        <div class="col-2">
+                            <label th:field="author">Author</label>
+                        </div>
+                        <div class="col-10">
+                            <input type="text" th:field="*{author}"/>
+                            <p th:if="${#fields.hasErrors('author')}" th:errors="*{author}">Incorrect field</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <label th:filed="title">Title</label>
+                        </div>
+                        <div class="col-10">
+                            <input type="text" th:field="*{title}"/>
+                            <p th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Incorrect field</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <label th:field="publisher">Publisher</label>
+                        </div>
+                        <div class="col-10">
+                            <input type="text" th:field="*{publisher}"/>
+                            <p th:if="${#fields.hasErrors('publisher')}" th:errors="*{publisher}">Incorrect field</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <label th:filed="type">Type</label>
+                        </div>
+                        <div class="col-10">
+                            <input type="text" th:field="*{type}"/>
+                            <p th:if="${#fields.hasErrors('type')}" th:errors="*{type}">Incorrect field</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <label th:field="isbn">ISBN</label>
+                        </div>
+                        <div class="col-10">
+                            <input type="text" th:field="*{isbn}"/>
+                            <p th:if="${#fields.hasErrors('isbn')}" th:errors="*{isbn}">Incorrect field</p>
+                        </div>
+                    </div>
+                    <hr class="divider">
+                    <input type="submit" value="Add" class="btn-dark shadow-lg p-3 mb-5 bg-dark rounded">
+                    <a class="btn-dark shadow-lg p-3 mb-5 bg-dark rounded"
+                       th:href="@{/books}" role="button"><i class="fas fa-home"></i></a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
